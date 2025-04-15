@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="black_pearl">#101011</color>
+    <color name="neutral_100">#F2F4F8</color>
+    <color name="neutral_200">#EDEEF0</color>
+    <color name="neutral_300">#DDE1E6</color>
+    <color name="neutral_400">#CCCDD2</color>
+    <color name="neutral_500">#93959B</color>
+    <color name="neutral_600">#6F7075</color>
+    <color name="neutral_700">#575857</color>
+    <color name="neutral_750">#434443</color>
+    <color name="neutral_800">#393A39</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="bright_blue">#2164F3</color>
+    <color name="bright_blue_transparent_0">#002164F3</color>
+
+
+    <color name="white_alpha_5">#0DFFFFFF</color>
+    <color name="black_alpha_5">#0A000000</color>
+    <color name="deep_alpha_8">#14000000</color>
+
+    <color name="red">#F54135</color>
+    <color name="bright_red">#FF4040</color>
+
+<!-- background gradient-->
+    <color name="muted_aqua">#8A9E9D</color>
+    <color name="background_card_black">#000000</color>
+    <color name="muted_aqua_transparent_0">#008A9E9D</color>
+
+    <color name="soft_blue_gray">#A6BED1</color>
+    <color name="soft_blue_gray_transparent_0">#00A6BED1</color>
+
+
+    <color name="orange">#CA7833</color>
+    <color name="green_active">#55CF1C</color>
+
+
+
+
+<!--    test color -->
+    <color name="fixed_color">#80FFFFFF</color>
+    <color name="items_background_color">#D9434443</color>
+
+</resources>
