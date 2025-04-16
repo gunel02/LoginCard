@@ -11,8 +11,8 @@ import com.example.logincard.databinding.ActivityHomeBinding
 import com.example.logincard.fragment.AddFragment
 import com.example.logincard.fragment.HomeFragment
 import com.example.logincard.fragment.ProfileFragment
-import com.example.utlis.Func
-import com.example.utlis.StaticVariables
+import com.example.logincard.utlis.Func
+import com.example.logincard.utlis.StaticVariables
 
 class HomeActivity : AppCompatActivity() {
 

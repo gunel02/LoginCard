@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CalendarView
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
@@ -15,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.logincard.R
 import com.example.logincard.adapter.AdapterUserDetail
 import com.example.logincard.databinding.FragmentUserDetailBinding
-import com.example.utlis.navigation.MainNavigationUtil
+import com.example.logincard.utlis.navigation.MainNavigationUtil
 
 class UserDetailFragment : Fragment() {
 
@@ -61,14 +60,17 @@ class UserDetailFragment : Fragment() {
         binding?.userDetailItemRv?.adapter = AdapterUserDetail(this)
     }
 
+
     private fun showPopup(anchorView: View) {
         val popupView = layoutInflater.inflate(R.layout.popup_menu, null)
         val popupWindow = PopupWindow(
             popupView,
-            dpToPx(250),
+            ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT,
             true
         )
+
+
 
         popupWindow.elevation = 10f
         popupWindow.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -116,15 +118,11 @@ class UserDetailFragment : Fragment() {
         popupWindow.showAsDropDown(anchorView, 0, 10)
     }
 
-    private fun dpToPx(dp: Int): Int {
-        val density = resources.displayMetrics.density
-        return (dp * density).toInt()
-    }
-
-
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
     }
 
 }
+
+

@@ -8,7 +8,7 @@ import com.example.logincard.databinding.CategoryItemsRvBinding
 import com.example.logincard.databinding.UsernameOfSelectedCategoryRvBinding
 import com.example.logincard.fragment.AssignTransactionFragment
 import com.example.logincard.fragment.SelectedCategoryFragment
-import com.example.utlis.navigation.MainNavigationUtil
+import com.example.logincard.utlis.navigation.MainNavigationUtil
 
 class AdapterAssignTransaction(val fragment: AssignTransactionFragment) :
     RecyclerView.Adapter<AdapterAssignTransaction.AdapterAssignTransactionViewHolder>() {

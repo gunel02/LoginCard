@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.logincard.databinding.CategoryItemsRvBinding
 import com.example.logincard.databinding.UsernameOfSelectedCategoryRvBinding
 import com.example.logincard.fragment.SelectedCategoryFragment
-import com.example.utlis.navigation.MainNavigationUtil
+import com.example.logincard.utlis.navigation.MainNavigationUtil
 
 class AdapterSelectedCategory(val fragment: SelectedCategoryFragment) :
     RecyclerView.Adapter<AdapterSelectedCategory.AdapterSelectedCategoryViewHolder>() {

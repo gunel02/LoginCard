@@ -8,7 +8,7 @@ import com.example.logincard.databinding.UserDetailItemRvBinding
 import com.example.logincard.databinding.UsernameOfSelectedCategoryRvBinding
 import com.example.logincard.fragment.SelectedCategoryFragment
 import com.example.logincard.fragment.UserDetailFragment
-import com.example.utlis.navigation.MainNavigationUtil
+import com.example.logincard.utlis.navigation.MainNavigationUtil
 
 class AdapterUserDetail(val fragment: UserDetailFragment) :
     RecyclerView.Adapter<AdapterUserDetail.AdapterUserDetailViewHolder>() {

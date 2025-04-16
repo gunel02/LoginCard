@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.logincard.adapter.AdapterSelectedCategory
 import com.example.logincard.databinding.FragmentSelectedCategoryBinding
-import com.example.utlis.navigation.MainNavigationUtil
+import com.example.logincard.utlis.navigation.MainNavigationUtil
 
 class SelectedCategoryFragment : Fragment() {
     private var binding: FragmentSelectedCategoryBinding? = null

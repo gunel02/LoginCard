@@ -1,4 +1,4 @@
-package com.example.utlis.navigation
+package com.example.logincard.utlis.navigation
 
 import android.content.Context
 import android.content.ContextWrapper

@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.logincard.R
 import com.example.logincard.databinding.AddItemRvBinding
-import com.example.utlis.navigation.MainNavigationUtil
+import com.example.logincard.utlis.navigation.MainNavigationUtil
 
 class AdapterAddItem :
     RecyclerView.Adapter<AdapterAddItem.AddItemViewHolder>() {

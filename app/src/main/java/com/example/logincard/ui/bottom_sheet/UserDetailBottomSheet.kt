@@ -11,17 +11,16 @@ import android.widget.LinearLayout
 import android.widget.PopupWindow
 import com.example.logincard.R
 import com.example.logincard.databinding.BottomSheetUserDetailBinding
-import com.example.logincard.fragment.UserDetailFragment.SelectedStatus
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-
 
 class UserDetailBottomSheet : BottomSheetDialogFragment() {
     enum class SelectedStatus {
-        COMPLETE,
-        TODO,
-        PROCESSING
+        PROGRESS,
+        ACTIVE,
+        INACTIVE
     }
-    private var selectedStatus: SelectedStatus = SelectedStatus.COMPLETE
+
+    private var selectedStatus: SelectedStatus = SelectedStatus.PROGRESS
 
     private var _binding: BottomSheetUserDetailBinding? = null
     private val binding get() = _binding!!
@@ -37,20 +36,18 @@ class UserDetailBottomSheet : BottomSheetDialogFragment() {
             dismiss()
         }
 
-        binding.sortButton.setOnClickListener{
-                showPopup(binding.sortButton)
-
+        binding.sortButton.setOnClickListener {
+            showPopup(binding.sortButton)
         }
 
         return binding.root
     }
 
-//    todo change names of item in xml , remove fixed size of popup menu
     private fun showPopup(anchorView: View) {
-        val popupView = layoutInflater.inflate(R.layout.popup_menu, null)
+        val popupView = layoutInflater.inflate(R.layout.layout_popup_menu_in_progress, null)
         val popupWindow = PopupWindow(
             popupView,
-            dpToPx(250),
+            ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT,
             true
         )
@@ -58,22 +55,24 @@ class UserDetailBottomSheet : BottomSheetDialogFragment() {
         popupWindow.elevation = 10f
         popupWindow.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        val layouts = listOf<LinearLayout>(
-            popupView.findViewById(R.id.option_complete),
-            popupView.findViewById(R.id.option_todo),
-            popupView.findViewById(R.id.option_processing)
+        val layouts = listOf(
+            popupView.findViewById<LinearLayout>(R.id.option_in_progress),
+            popupView.findViewById<LinearLayout>(R.id.option_active),
+            popupView.findViewById<LinearLayout>(R.id.option_in_active)
         )
 
-        val icons = listOf<ImageView>(
-            popupView.findViewById(R.id.icon_complete),
-            popupView.findViewById(R.id.icon_todo),
-            popupView.findViewById(R.id.icon_processing)
+        val icons = listOf(
+            popupView.findViewById<ImageView>(R.id.icon_check),
+            popupView.findViewById<ImageView>(R.id.icon_check2),
+            popupView.findViewById<ImageView>(R.id.icon_check3)
         )
+
+        val statusTextList = listOf("In Progress", "Active", "Inactive")
 
         val defaultIndex = when (selectedStatus) {
-            SelectedStatus.COMPLETE -> 0
-            SelectedStatus.TODO -> 1
-            SelectedStatus.PROCESSING -> 2
+            SelectedStatus.PROGRESS -> 0
+            SelectedStatus.ACTIVE -> 1
+            SelectedStatus.INACTIVE -> 2
         }
 
         fun updateSelection(selectedIndex: Int) {
@@ -89,10 +88,12 @@ class UserDetailBottomSheet : BottomSheetDialogFragment() {
                 updateSelection(index)
 
                 selectedStatus = when (index) {
-                    0 -> SelectedStatus.COMPLETE
-                    1 -> SelectedStatus.TODO
-                    else -> SelectedStatus.PROCESSING
+                    0 -> SelectedStatus.PROGRESS
+                    1 -> SelectedStatus.ACTIVE
+                    else -> SelectedStatus.INACTIVE
                 }
+
+                binding.textStatus.text = statusTextList[index]
 
                 popupWindow.dismiss()
             }
@@ -101,14 +102,8 @@ class UserDetailBottomSheet : BottomSheetDialogFragment() {
         popupWindow.showAsDropDown(anchorView, 0, 10)
     }
 
-    private fun dpToPx(dp: Int): Int {
-        val density = resources.displayMetrics.density
-        return (dp * density).toInt()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setStyle(STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme)
     }
 
@@ -117,4 +112,3 @@ class UserDetailBottomSheet : BottomSheetDialogFragment() {
         _binding = null
     }
 }
-

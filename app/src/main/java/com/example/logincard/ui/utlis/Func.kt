@@ -1,4 +1,4 @@
-package com.example.utlis
+package com.example.logincard.utlis
 
 import android.content.Context
 import android.os.VibrationEffect

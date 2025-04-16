@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.logincard.databinding.CategoryItemsRvBinding
-import com.example.utlis.navigation.MainNavigationUtil
+import com.example.logincard.utlis.navigation.MainNavigationUtil
 
 class AdapterCategories(val fragment: CategoryFragment) :
     RecyclerView.Adapter<AdapterCategories.AdapterCategoryViewHolder>() {
