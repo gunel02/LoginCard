@@ -1,4 +1,4 @@
-package com.example.logincard.activity
+package com.example.logincard.ui.activity
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,11 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.logincard.R
 import com.example.logincard.databinding.ActivityHomeBinding
-import com.example.logincard.fragment.AddFragment
-import com.example.logincard.fragment.HomeFragment
-import com.example.logincard.fragment.ProfileFragment
-import com.example.logincard.utlis.Func
-import com.example.logincard.utlis.StaticVariables
+import com.example.logincard.ui.fragment.AddFragment
+import com.example.logincard.ui.fragment.HomeFragment
+import com.example.logincard.ui.fragment.ProfileFragment
+import com.example.logincard.ui.utlis.Func
+import com.example.logincard.ui.utlis.StaticVariables
 
 class HomeActivity : AppCompatActivity() {
 
@@ -37,8 +37,6 @@ class HomeActivity : AppCompatActivity() {
 
         addFragments(savedInstanceState)
 
-
-
         binding?.bottomNav?.setOnItemSelectedListener {
             val indicator = binding?.navIndicator
             val menuSize = binding?.bottomNav?.menu?.size() ?: 1
@@ -57,10 +55,8 @@ class HomeActivity : AppCompatActivity() {
             }
 
             setFragment(it.itemId)
+
         }
-
-
-
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -83,9 +79,7 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         })
-
     }
-
 
     private val homeFragment: HomeFragment by lazy {
         val fr = supportFragmentManager.findFragmentByTag(TAG_HOME)
@@ -108,13 +102,11 @@ class HomeActivity : AppCompatActivity() {
         outState.putString("active_fragment", activeFragment?.tag)
     }
 
-
     private fun addFragments(savedInstanceState: Bundle?) {
         savedInstanceState?.let {
             selectedFragment = it.getInt(CURRENT_FRAGMENT, R.id.home)
         }
         val activeFragmentTag = savedInstanceState?.getString("active_fragment")
-
 
         activeFragment = if (activeFragmentTag.isNullOrEmpty()) {
             homeFragment
@@ -127,7 +119,6 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_container, homeFragment, TAG_HOME).hide(homeFragment)
@@ -136,11 +127,9 @@ class HomeActivity : AppCompatActivity() {
                 .show(activeFragment!!).commit()
         }
 
-
         binding?.bottomNav?.setOnItemSelectedListener {
             setFragment(it.itemId)
         }
-
     }
 
     private fun setFragment(itemId: Int): Boolean {
@@ -159,7 +148,6 @@ class HomeActivity : AppCompatActivity() {
                 activeFragment = homeFragment
             }
 
-
             R.id.add -> {
                 if (activeFragment is AddFragment) {
                     return false
@@ -168,10 +156,8 @@ class HomeActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().hide(it)
                         .show(addFragment).commit()
                 }
-
                 activeFragment = addFragment
             }
-
 
             R.id.profile -> {
                 if (activeFragment is ProfileFragment) {
@@ -181,12 +167,10 @@ class HomeActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().hide(it)
                         .show(profileFragment).commit()
                 }
-
                 activeFragment = profileFragment
             }
         }
         return true
 
     }
-
 }

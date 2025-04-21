@@ -1,12 +1,11 @@
-package com.example.logincard.adapter
+package com.example.logincard.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.logincard.databinding.CategoryItemsRvBinding
 import com.example.logincard.databinding.UsernameOfSelectedCategoryRvBinding
-import com.example.logincard.fragment.SelectedCategoryFragment
-import com.example.logincard.utlis.navigation.MainNavigationUtil
+import com.example.logincard.ui.fragment.SelectedCategoryFragment
+import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
 
 class AdapterSelectedCategory(val fragment: SelectedCategoryFragment) :
     RecyclerView.Adapter<AdapterSelectedCategory.AdapterSelectedCategoryViewHolder>() {
@@ -14,8 +13,12 @@ class AdapterSelectedCategory(val fragment: SelectedCategoryFragment) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ):AdapterSelectedCategoryViewHolder {
-        val b = UsernameOfSelectedCategoryRvBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    ): AdapterSelectedCategoryViewHolder {
+        val b = UsernameOfSelectedCategoryRvBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return AdapterSelectedCategoryViewHolder(b)
     }
 
@@ -39,5 +42,4 @@ class AdapterSelectedCategory(val fragment: SelectedCategoryFragment) :
 
     class AdapterSelectedCategoryViewHolder(val binding: UsernameOfSelectedCategoryRvBinding) :
         RecyclerView.ViewHolder(binding.root)
-
 }

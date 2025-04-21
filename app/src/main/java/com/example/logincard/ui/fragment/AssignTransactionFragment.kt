@@ -1,23 +1,19 @@
-package com.example.logincard.fragment
+package com.example.logincard.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.logincard.R
-import com.example.logincard.adapter.AdapterAddItem
-import com.example.logincard.adapter.AdapterAssignTransaction
-import com.example.logincard.bottom_sheet.CashOutBottomSheet
-import com.example.logincard.bottom_sheet.UserDetailBottomSheet
-import com.example.logincard.databinding.FragmentAddNewAssignBinding
 import com.example.logincard.databinding.FragmentAssignTransactionBinding
+import com.example.logincard.ui.adapter.AdapterAssignTransaction
+import com.example.logincard.ui.bottom_sheet.AddCashBottomSheet
+import com.example.logincard.ui.bottom_sheet.CashOutBottomSheet
 
 class AssignTransactionFragment : Fragment() {
 
     private var binding: FragmentAssignTransactionBinding? = null
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,13 +25,15 @@ class AssignTransactionFragment : Fragment() {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
-        binding?.cashOutButton?.setOnClickListener {
-
-                val bottomSheet = CashOutBottomSheet()
-                bottomSheet.show(requireActivity().supportFragmentManager, "bottomSheet")
-
+        binding?.addCashButton?.setOnClickListener {
+            val bottomSheet = AddCashBottomSheet()
+            bottomSheet.show(requireActivity().supportFragmentManager, "bottomSheet")
         }
 
+        binding?.cashOutButton?.setOnClickListener {
+            val bottomSheet = CashOutBottomSheet()
+            bottomSheet.show(requireActivity().supportFragmentManager, "bottomSheet")
+        }
         setAdapter()
         return binding?.root
     }
@@ -44,6 +42,4 @@ class AssignTransactionFragment : Fragment() {
         binding?.assignTransactionRv?.layoutManager = LinearLayoutManager(context)
         binding?.assignTransactionRv?.adapter = AdapterAssignTransaction(this)
     }
-
-
 }

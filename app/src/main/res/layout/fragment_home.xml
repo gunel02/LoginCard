@@ -7,7 +7,7 @@
     android:background="@color/neutral_100"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".fragment.HomeFragment">
+    tools:context=".ui.fragment.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,7 +74,6 @@
             tools:itemCount="1"
             tools:listitem="@layout/add_item_rv" />
     </LinearLayout>
-
 
 </FrameLayout>
 

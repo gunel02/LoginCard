@@ -1,4 +1,5 @@
-package com.example.logincard.activity
+package com.example.logincard.ui.activity
+
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +14,6 @@ class LoginActivity : AppCompatActivity() {
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-
 
         initListener()
 

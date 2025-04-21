@@ -1,4 +1,4 @@
-package com.example.logincard.adapter
+package com.example.logincard.ui.adapter
 
 
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.logincard.R
 import com.example.logincard.databinding.AddItemRvBinding
-import com.example.logincard.utlis.navigation.MainNavigationUtil
+import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
 
 class AdapterAddItem :
     RecyclerView.Adapter<AdapterAddItem.AddItemViewHolder>() {
@@ -15,7 +15,7 @@ class AdapterAddItem :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ):AddItemViewHolder {
+    ): AddItemViewHolder {
         val b = AddItemRvBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return AddItemViewHolder(b)
     }
@@ -36,8 +36,6 @@ class AdapterAddItem :
             MainNavigationUtil.navigateToCategoryFragment(holder.binding.root.context)
         }
 
-
-
     }
 
     override fun getItemCount(): Int {
@@ -50,5 +48,4 @@ class AdapterAddItem :
 
     class AddItemViewHolder(val binding: AddItemRvBinding) :
         RecyclerView.ViewHolder(binding.root)
-
 }

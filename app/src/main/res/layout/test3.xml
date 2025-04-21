@@ -7,18 +7,15 @@
     android:orientation="vertical"
     tools:context=".ui.activity.HomeActivity">
 
-    <!-- Main content container for the app -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- LinearLayout to hold fragments and bottom navigation -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!-- Fragment container with a weight for flexible resizing -->
             <FrameLayout
                 android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
@@ -51,7 +48,6 @@
 
         </LinearLayout>
 
-        <!-- Additional fragment container without bottom navigation -->
         <FrameLayout
             android:id="@+id/fragment_container_without_bottom_nav"
             android:layout_width="match_parent"

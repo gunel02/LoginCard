@@ -12,14 +12,14 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.FrameLayout
 import com.example.logincard.R
-import com.example.logincard.databinding.BottomSheetCashOutBinding
+import com.example.logincard.databinding.BottomSheetAddCashBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class CashOutBottomSheet : BottomSheetDialogFragment() {
+class AddCashBottomSheet : BottomSheetDialogFragment() {
 
-    private var _binding: BottomSheetCashOutBinding? = null
+    private var _binding: BottomSheetAddCashBinding? = null
     private val binding get() = _binding!!
 
     @SuppressLint("ClickableViewAccessibility")
@@ -28,12 +28,12 @@ class CashOutBottomSheet : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = BottomSheetCashOutBinding.inflate(inflater, container, false)
+        _binding = BottomSheetAddCashBinding.inflate(inflater, container, false)
 
         binding.closeButton.setOnClickListener {
             dismiss()
         }
-
+// todo - when i  click it is opens again
         binding.clickButton.setOnClickListener {
             binding.numberEditText.requestFocus()
             binding.numberEditText.post {
@@ -98,6 +98,5 @@ class CashOutBottomSheet : BottomSheetDialogFragment() {
         val view = dialog?.currentFocus ?: View(requireContext())
         imm?.hideSoftInputFromWindow(view.windowToken, 0)
     }
-
 }
 

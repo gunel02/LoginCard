@@ -1,4 +1,4 @@
-package com.example.logincard.utlis
+package com.example.logincard.ui.utlis
 
 import android.content.Context
 import android.os.VibrationEffect
@@ -122,6 +122,4 @@ object Func {
             Log.d("TAG_try_error", "showToast: " + e.message)
         }
     }
-
-
 }

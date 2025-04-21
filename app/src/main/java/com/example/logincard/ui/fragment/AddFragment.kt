@@ -1,4 +1,4 @@
-package com.example.logincard.fragment
+package com.example.logincard.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -19,10 +19,8 @@ class AddFragment : Fragment() {
 
         binding = FragmentAddBinding.inflate(inflater, container, false)
 
-
         return binding?.root
 
     }
-
 
 }

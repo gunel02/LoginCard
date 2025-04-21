@@ -1,4 +1,4 @@
-package com.example.logincard.widgets
+package com.example.logincard.ui.widgets
 
 import android.content.Context
 import android.util.AttributeSet
@@ -9,7 +9,6 @@ class RippleFrameLayout @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
-
 
     init {
         isClickable = true

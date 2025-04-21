@@ -1,4 +1,4 @@
-package com.example.logincard.fragment
+package com.example.logincard.ui.fragment
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -12,9 +12,9 @@ import android.widget.PopupWindow
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.logincard.R
-import com.example.logincard.adapter.AdapterUserDetail
 import com.example.logincard.databinding.FragmentUserDetailBinding
-import com.example.logincard.utlis.navigation.MainNavigationUtil
+import com.example.logincard.ui.adapter.AdapterUserDetail
+import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
 
 class UserDetailFragment : Fragment() {
 
@@ -47,10 +47,8 @@ class UserDetailFragment : Fragment() {
             showPopup(binding?.listButton!!)
         }
 
-
         binding?.calendarButton?.setOnClickListener {
         }
-
 
         return binding?.root
     }
@@ -60,7 +58,6 @@ class UserDetailFragment : Fragment() {
         binding?.userDetailItemRv?.adapter = AdapterUserDetail(this)
     }
 
-
     private fun showPopup(anchorView: View) {
         val popupView = layoutInflater.inflate(R.layout.popup_menu, null)
         val popupWindow = PopupWindow(
@@ -69,8 +66,6 @@ class UserDetailFragment : Fragment() {
             ViewGroup.LayoutParams.WRAP_CONTENT,
             true
         )
-
-
 
         popupWindow.elevation = 10f
         popupWindow.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -104,13 +99,11 @@ class UserDetailFragment : Fragment() {
         layouts.forEachIndexed { index, layout ->
             layout.setOnClickListener {
                 updateSelection(index)
-
                 selectedStatus = when (index) {
                     0 -> SelectedStatus.COMPLETE
                     1 -> SelectedStatus.TODO
                     else -> SelectedStatus.PROCESSING
                 }
-
                 popupWindow.dismiss()
             }
         }
@@ -124,5 +117,3 @@ class UserDetailFragment : Fragment() {
     }
 
 }
-
-

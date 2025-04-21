@@ -1,4 +1,4 @@
-package com.example.logincard.fragment
+package com.example.logincard.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.logincard.adapter.AdapterSelectedCategory
+import com.example.logincard.ui.adapter.AdapterSelectedCategory
 import com.example.logincard.databinding.FragmentSelectedCategoryBinding
-import com.example.logincard.utlis.navigation.MainNavigationUtil
+import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
 
 class SelectedCategoryFragment : Fragment() {
     private var binding: FragmentSelectedCategoryBinding? = null
