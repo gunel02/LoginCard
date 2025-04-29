@@ -27,6 +27,8 @@
     <color name="muted_aqua">#8A9E9D</color>
     <color name="background_card_black">#000000</color>
     <color name="muted_aqua_transparent_0">#008A9E9D</color>
+    <color name="date_color">#45454A</color>
+    <color name="universal_gray">#797B86</color>
 
     <color name="soft_blue_gray">#A6BED1</color>
     <color name="soft_blue_gray_transparent_0">#00A6BED1</color>

@@ -21,6 +21,14 @@ class AssignTransactionFragment : Fragment() {
     ): View? {
         binding = FragmentAssignTransactionBinding.inflate(inflater, container, false)
 
+        initListener()
+
+        setAdapter()
+
+        return binding?.root
+    }
+
+    private fun initListener() {
         binding?.backBtn?.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
@@ -34,8 +42,6 @@ class AssignTransactionFragment : Fragment() {
             val bottomSheet = CashOutBottomSheet()
             bottomSheet.show(requireActivity().supportFragmentManager, "bottomSheet")
         }
-        setAdapter()
-        return binding?.root
     }
 
     private fun setAdapter() {

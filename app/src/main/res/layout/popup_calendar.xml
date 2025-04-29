@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/calendar_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_calendar_popup"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:focusable="true"
+        android:dateTextAppearance="@style/CalendarDateStyle"
+        android:weekDayTextAppearance="@style/CalendarWeekDayStyle" />
+
+</LinearLayout>
+

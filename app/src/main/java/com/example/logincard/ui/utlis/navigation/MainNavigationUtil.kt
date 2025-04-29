@@ -48,7 +48,6 @@ object MainNavigationUtil {
             .commit()
     }
 
-
     fun navigateToUserDetailFragment(context: Context?) {
         if (context == null) return
         val fragment = UserDetailFragment()

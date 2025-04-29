@@ -11,6 +11,7 @@
     tools:context=".ui.fragment.CreateTaskFragment">
 
     <LinearLayout
+        android:id="@+id/button_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -33,12 +34,14 @@
     </LinearLayout>
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_gravity="bottom"
         android:background="@drawable/background_tick" />
 
     <LinearLayout
+        android:id="@+id/main_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -248,6 +251,7 @@
                         android:textColor="@color/black_pearl"
                         android:textSize="15sp" />
 
+<!--                    todo - edit text keyboard acylanda text yokara gidadi-->
                     <EditText
                         android:id="@+id/password_text"
                         android:layout_width="0dp"
@@ -329,6 +333,7 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/save_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -376,3 +381,6 @@
     </RelativeLayout>
 
 </LinearLayout>
+
+<!--layouts must be inside scroll view but except buttons:        android:id="@+id/save_button" ,        android:id="@+id/button_layout"
+, -->

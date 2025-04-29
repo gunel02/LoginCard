@@ -43,7 +43,7 @@
                             app:cardBackgroundColor="@color/deep_alpha_8"
                             app:cardCornerRadius="50dp"
                             app:strokeColor="@android:color/transparent"
-                            app:strokeWidth="0dp">
+                             app:strokeWidth="0dp">
 
                             <com.example.logincard.ui.widgets.RippleFrameLayout
                                 android:id="@+id/close_button"

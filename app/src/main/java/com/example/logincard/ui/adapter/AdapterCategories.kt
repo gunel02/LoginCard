@@ -43,7 +43,7 @@ import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
 //
 //}
 
-// todo -set to the up to right
+// todo - set to the up to right
 class AdapterCategories( val fragment: CategoryFragment) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

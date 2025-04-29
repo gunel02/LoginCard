@@ -3,5 +3,4 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="underlined_text_log_in">By tapping “Log in”, you accept the terms of <u> User Agreement</u>.</string>
     <string name="press_to_exit">Нажмите «Назад» ещё раз для выхода</string>
-
 </resources>

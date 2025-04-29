@@ -1,13 +1,13 @@
 package com.example.logincard.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.logincard.ui.adapter.AdapterSelectedCategory
 import com.example.logincard.databinding.FragmentSelectedCategoryBinding
+import com.example.logincard.ui.adapter.AdapterSelectedCategory
 import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
 
 class SelectedCategoryFragment : Fragment() {
@@ -21,15 +21,19 @@ class SelectedCategoryFragment : Fragment() {
 
         setSelectedCategoryAdapter()
 
+        initListener()
+
+        return binding?.root
+    }
+
+    private fun initListener() {
         binding?.backBtn?.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
-        binding?.addButton?.setOnClickListener{
+        binding?.addButton?.setOnClickListener {
             MainNavigationUtil.navigateToAddNewAssignFragment(requireContext())
         }
-
-        return binding?.root
     }
 
     private fun setSelectedCategoryAdapter() {

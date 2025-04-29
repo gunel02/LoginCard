@@ -23,8 +23,13 @@
         <item name="android:background">@color/transparent</item>
     </style>
 
+    <style name="CalendarDateStyle" parent="@android:style/TextAppearance.DeviceDefault.Medium">
+        <item name="android:textColor">@color/date_color</item>
+    </style>
 
-
+    <style name="CalendarWeekDayStyle" parent="@android:style/TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/universal_gray</item>
+    </style>
 
 </resources>
 

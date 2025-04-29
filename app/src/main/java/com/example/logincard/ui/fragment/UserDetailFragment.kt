@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CalendarView
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
@@ -15,25 +16,36 @@ import com.example.logincard.R
 import com.example.logincard.databinding.FragmentUserDetailBinding
 import com.example.logincard.ui.adapter.AdapterUserDetail
 import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
+import java.util.Calendar
 
 class UserDetailFragment : Fragment() {
 
+    private var calendarPopup: PopupWindow? = null
+    private var selectedDateInMillis: Long = Calendar.getInstance().timeInMillis
+
     enum class SelectedStatus {
-        COMPLETE,
-        TODO,
-        PROCESSING
+        COMPLETE, TODO, PROCESSING
     }
 
     private var binding: FragmentUserDetailBinding? = null
     private var selectedStatus: SelectedStatus = SelectedStatus.COMPLETE
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragmentUserDetailBinding.inflate(inflater, container, false)
 
         setAdapter()
+
+        initListener()
+
+        return binding?.root
+    }
+
+    private fun initListener() {
+        binding?.calendarButton?.setOnClickListener {
+            showCalendarPopup(it)
+        }
 
         binding?.backBtn?.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
@@ -46,11 +58,6 @@ class UserDetailFragment : Fragment() {
         binding?.listButton?.setOnClickListener {
             showPopup(binding?.listButton!!)
         }
-
-        binding?.calendarButton?.setOnClickListener {
-        }
-
-        return binding?.root
     }
 
     private fun setAdapter() {
@@ -111,9 +118,36 @@ class UserDetailFragment : Fragment() {
         popupWindow.showAsDropDown(anchorView, 0, 10)
     }
 
+
+    //    todo - calendar must be custom ,
+    private fun showCalendarPopup(anchor: View) {
+        val view = layoutInflater.inflate(R.layout.popup_calendar, null)
+        val calendarView = view.findViewById<CalendarView>(R.id.calendar_view)
+
+        calendarView.date = selectedDateInMillis
+
+        calendarPopup = PopupWindow(
+            view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true
+        ).apply {
+            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            elevation = 8f
+            isOutsideTouchable = true
+            showAsDropDown(anchor, 0, 10)
+        }
+
+        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
+            val calendar = Calendar.getInstance()
+            calendar.set(year, month, dayOfMonth)
+            selectedDateInMillis = calendar.timeInMillis
+
+            val dateStr = "$dayOfMonth/${month + 1}/$year"
+            binding?.testDate?.text = dateStr
+
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
     }
-
 }

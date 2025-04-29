@@ -30,6 +30,14 @@ class CashOutBottomSheet : BottomSheetDialogFragment() {
     ): View {
         _binding = BottomSheetCashOutBinding.inflate(inflater, container, false)
 
+        initListener()
+
+        setupUI(binding.root)
+
+        return binding.root
+    }
+
+    private fun initListener() {
         binding.closeButton.setOnClickListener {
             dismiss()
         }
@@ -46,9 +54,6 @@ class CashOutBottomSheet : BottomSheetDialogFragment() {
             }
         }
 
-        setupUI(binding.root)
-
-        return binding.root
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

@@ -2,31 +2,33 @@ package com.example.logincard.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.logincard.databinding.NamesOfAddAssignsRvBinding
 import com.example.logincard.databinding.UsernameOfSelectedCategoryRvBinding
+import com.example.logincard.ui.fragment.AddFragment
 import com.example.logincard.ui.fragment.SelectedCategoryFragment
 import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
 
-class AdapterSelectedCategory(val fragment: SelectedCategoryFragment) :
-    RecyclerView.Adapter<AdapterSelectedCategory.AdapterSelectedCategoryViewHolder>() {
+class AdapterNamesOfAddAssigns(val fragment: AddFragment) :
+    RecyclerView.Adapter<AdapterNamesOfAddAssigns.AdapterNamesOfAddAssignsViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): AdapterSelectedCategoryViewHolder {
-        val b = UsernameOfSelectedCategoryRvBinding.inflate(
+    ): AdapterNamesOfAddAssignsViewHolder {
+        val b = NamesOfAddAssignsRvBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return AdapterSelectedCategoryViewHolder(b)
+        return AdapterNamesOfAddAssignsViewHolder(b)
     }
 
     override fun onBindViewHolder(
-        holder: AdapterSelectedCategoryViewHolder,
+        holder: AdapterNamesOfAddAssignsViewHolder,
         position: Int
     ) {
         holder.binding.clickButton.setOnClickListener {
-            MainNavigationUtil.navigateToUserDetailFragment(holder.binding.root.context)
+            MainNavigationUtil.navigateToAddNewAssignFragment(holder.binding.root.context)
         }
 
     }
@@ -39,6 +41,6 @@ class AdapterSelectedCategory(val fragment: SelectedCategoryFragment) :
         notifyDataSetChanged()
     }
 
-    class AdapterSelectedCategoryViewHolder(val binding: UsernameOfSelectedCategoryRvBinding) :
+    class AdapterNamesOfAddAssignsViewHolder(val binding: NamesOfAddAssignsRvBinding) :
         RecyclerView.ViewHolder(binding.root)
 }

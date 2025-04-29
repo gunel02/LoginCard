@@ -37,26 +37,7 @@ class HomeActivity : AppCompatActivity() {
 
         addFragments(savedInstanceState)
 
-        binding?.bottomNav?.setOnItemSelectedListener {
-            val indicator = binding?.navIndicator
-            val menuSize = binding?.bottomNav?.menu?.size() ?: 1
-            val itemWidth = binding?.bottomNav?.width?.div(menuSize) ?: 1
-
-            val selectedIndex = when (it.itemId) {
-                R.id.home -> 0
-                R.id.add -> 1
-                R.id.profile -> 2
-                else -> 0
-            }
-
-            indicator?.post {
-                val targetX = (selectedIndex * itemWidth) + (itemWidth / 2) - (indicator.width / 2)
-                indicator.animate().x(targetX.toFloat()).setDuration(250).start()
-            }
-
-            setFragment(it.itemId)
-
-        }
+        initListener()
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -79,6 +60,29 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    private fun initListener() {
+        binding?.bottomNav?.setOnItemSelectedListener {
+            val indicator = binding?.navIndicator
+            val menuSize = binding?.bottomNav?.menu?.size() ?: 1
+            val itemWidth = binding?.bottomNav?.width?.div(menuSize) ?: 1
+
+            val selectedIndex = when (it.itemId) {
+                R.id.home -> 0
+                R.id.add -> 1
+                R.id.profile -> 2
+                else -> 0
+            }
+
+            indicator?.post {
+                val targetX = (selectedIndex * itemWidth) + (itemWidth / 2) - (indicator.width / 2)
+                indicator.animate().x(targetX.toFloat()).setDuration(250).start()
+            }
+
+            setFragment(it.itemId)
+
+        }
     }
 
     private val homeFragment: HomeFragment by lazy {

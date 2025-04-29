@@ -9,20 +9,17 @@ import com.example.logincard.R
 import com.example.logincard.databinding.AddItemRvBinding
 import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
 
-class AdapterAddItem :
-    RecyclerView.Adapter<AdapterAddItem.AddItemViewHolder>() {
+class AdapterAddItem : RecyclerView.Adapter<AdapterAddItem.AddItemViewHolder>() {
 
     override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
+        parent: ViewGroup, viewType: Int
     ): AddItemViewHolder {
         val b = AddItemRvBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return AddItemViewHolder(b)
     }
 
     override fun onBindViewHolder(
-        holder: AddItemViewHolder,
-        position: Int
+        holder: AddItemViewHolder, position: Int
     ) {
         val backgroundLayout = holder.binding.root.findViewById<LinearLayout>(R.id.click_button)
 
@@ -46,6 +43,5 @@ class AdapterAddItem :
         notifyDataSetChanged()
     }
 
-    class AddItemViewHolder(val binding: AddItemRvBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    class AddItemViewHolder(val binding: AddItemRvBinding) : RecyclerView.ViewHolder(binding.root)
 }

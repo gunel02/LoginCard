@@ -17,7 +17,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class AddCashBottomSheet : BottomSheetDialogFragment() {
+class AddNewAssignBottomSheet : BottomSheetDialogFragment() {
 
     private var _binding: BottomSheetAddCashBinding? = null
     private val binding get() = _binding!!

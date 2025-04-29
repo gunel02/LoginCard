@@ -21,12 +21,16 @@ class CategoryFragment : Fragment() {
 
         setCategoryAdapter()
 
-        binding?.backBtn?.setOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack()
-        }
+        initListener()
 
         return binding?.root
 
+    }
+
+    private fun initListener() {
+        binding?.backBtn?.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
     }
 
     private fun setCategoryAdapter() {

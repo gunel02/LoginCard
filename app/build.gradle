@@ -50,4 +50,9 @@ dependencies {
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
 
+    // In your app-level build.gradle
+//    implementation libs.prolificinteractive.material.calendarview
+//
+//    implementation 'com.prolificinteractive:material-calendarview:2.0.1'
+
 }

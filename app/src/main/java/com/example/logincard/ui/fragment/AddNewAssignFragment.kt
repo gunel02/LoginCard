@@ -18,15 +18,12 @@ class AddNewAssignFragment : Fragment() {
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         binding = FragmentAddNewAssignBinding.inflate(inflater, container, false)
 
-        binding?.backBtn?.setOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack()
-        }
+        initListener()
 
         binding?.root?.setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
@@ -41,5 +38,11 @@ class AddNewAssignFragment : Fragment() {
             false
         }
         return binding?.root
+    }
+
+    private fun initListener() {
+        binding?.backBtn?.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
     }
 }

@@ -41,13 +41,7 @@ class UserDetailBottomSheet : BottomSheetDialogFragment() {
     ): View {
         _binding = BottomSheetUserDetailBinding.inflate(inflater, container, false)
 
-        binding.closeButton.setOnClickListener {
-            dismiss()
-        }
-
-        binding.sortButton.setOnClickListener {
-            showPopup(binding.sortButton)
-        }
+        initListener()
 
         binding.root.setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
@@ -62,6 +56,16 @@ class UserDetailBottomSheet : BottomSheetDialogFragment() {
             false
         }
         return binding.root
+    }
+
+    private fun initListener() {
+        binding.closeButton.setOnClickListener {
+            dismiss()
+        }
+
+        binding.sortButton.setOnClickListener {
+            showPopup(binding.sortButton)
+        }
     }
 
     private fun showPopup(anchorView: View) {

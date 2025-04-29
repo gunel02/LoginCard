@@ -10,10 +10,11 @@
         android:color="@color/neutral_300" />
 
     <gradient
-        android:angle="90"
-        android:endColor="@color/soft_blue_gray"
-        android:startColor="@color/soft_blue_gray_transparent_0"
+        android:angle="0"
+        android:endColor="@color/soft_blue_gray_transparent_0"
+        android:startColor="@color/soft_blue_gray"
         android:type="linear" />
+
 </shape>
 
     <!--todo - to fix gradient color-->
