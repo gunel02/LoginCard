@@ -13,13 +13,14 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import com.example.logincard.R
 import com.example.logincard.databinding.BottomSheetAddCashBinding
+import com.example.logincard.databinding.BottomSheetAddNewAssignBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class AddNewAssignBottomSheet : BottomSheetDialogFragment() {
 
-    private var _binding: BottomSheetAddCashBinding? = null
+    private var _binding: BottomSheetAddNewAssignBinding? = null
     private val binding get() = _binding!!
 
     @SuppressLint("ClickableViewAccessibility")
@@ -28,7 +29,7 @@ class AddNewAssignBottomSheet : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = BottomSheetAddCashBinding.inflate(inflater, container, false)
+        _binding = BottomSheetAddNewAssignBinding.inflate(inflater, container, false)
 
         initListener()
 
@@ -65,18 +66,6 @@ class AddNewAssignBottomSheet : BottomSheetDialogFragment() {
     private fun initListener(){
         binding.closeButton.setOnClickListener {
             dismiss()
-        }
-// todo - when i  click it is opens again
-        binding.clickButton.setOnClickListener {
-            binding.numberEditText.requestFocus()
-            binding.numberEditText.post {
-                val inputMethodManager =
-                    requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                inputMethodManager.showSoftInput(
-                    binding.numberEditText,
-                    InputMethodManager.SHOW_IMPLICIT
-                )
-            }
         }
 
     }

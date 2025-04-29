@@ -1,291 +1,188 @@
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="30dp"
-    app:cardElevation="8dp"
-    app:cardBackgroundColor="@color/neutral_100"
-    app:strokeColor="@android:color/transparent"
-    app:strokeWidth="0dp">
+    android:background="@android:color/transparent">
 
-    <!-- Your original layout starts here -->
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@android:color/transparent">
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:paddingHorizontal="14dp"
-            android:paddingTop="14dp">
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/deep_alpha_8"
-                app:cardCornerRadius="50dp"
-                app:strokeColor="@android:color/transparent"
-                app:strokeWidth="0dp">
-
-                <com.example.logincard.ui.widgets.RippleFrameLayout
-                    android:id="@+id/close_button"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:clickable="true"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/icon_close"
-                        app:tint="@color/neutral_500" />
-
-                </com.example.logincard.ui.widgets.RippleFrameLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </FrameLayout>
+        android:layout_margin="10dp"
+        app:cardCornerRadius="30dp"
+        app:cardBackgroundColor="@color/neutral_100"
+        app:strokeColor="@android:color/transparent"
+        app:strokeWidth="0dp">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:fillViewport="true"
             android:overScrollMode="never">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:orientation="vertical">
 
+                <!-- Close Button -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="14dp"
+                    android:paddingEnd="14dp"
+                    android:layout_gravity="end">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="end"
+                        app:cardBackgroundColor="@color/deep_alpha_8"
+                        app:cardCornerRadius="50dp"
+                        app:strokeColor="@android:color/transparent"
+                        app:strokeWidth="0dp">
+
+                        <com.example.logincard.ui.widgets.RippleFrameLayout
+                            android:id="@+id/close_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icon_close"
+                                app:tint="@color/neutral_500" />
+
+                        </com.example.logincard.ui.widgets.RippleFrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </FrameLayout>
+
+                <!-- Content Below -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="24dp">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="12dp"
+                        android:src="@drawable/icon_person_edit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/work_sans_semi_bold"
+                        android:text="Assign Info"
+                        android:textColor="@color/black_pearl"
+                        android:textSize="23sp" />
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        app:cardBackgroundColor="@color/neutral_100"
-                        app:cardCornerRadius="30dp"
-                        app:strokeColor="@color/transparent"
-                        app:strokeWidth="0dp">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="24dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="24dp">
 
-                        <LinearLayout
+                        <com.google.android.material.card.MaterialCardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
+                            android:orientation="vertical"
+                            app:cardBackgroundColor="@color/neutral_200"
+                            app:cardCornerRadius="12dp"
+                            app:strokeColor="@android:color/transparent"
+                            app:strokeWidth="0dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="24dp"
-                                android:layout_marginBottom="24dp"
                                 android:orientation="vertical">
 
+                                <!-- Full Name -->
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="24dp"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="54dp"
-                                        android:layout_height="54dp"
-                                        android:layout_gravity="center"
-                                        android:layout_marginBottom="12dp"
-                                        android:src="@drawable/icon_money" />
+                                    android:orientation="horizontal"
+                                    android:paddingHorizontal="8dp">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-                                        android:fontFamily="@font/work_sans_semi_bold"
-                                        android:text="Cash Out"
+                                        android:layout_marginEnd="10dp"
+                                        android:fontFamily="@font/work_sans_regular"
+                                        android:paddingVertical="15dp"
+                                        android:text="Full name"
                                         android:textColor="@color/black_pearl"
-                                        android:textSize="23sp" />
+                                        android:textSize="15sp" />
 
+                                    <EditText
+                                        android:id="@+id/full_name"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@android:color/transparent"
+                                        android:hint="Begench Baymuradov"
+                                        android:inputType="textPersonName"
+                                        android:textColor="@color/black_pearl"
+                                        android:textColorHint="@color/neutral_600"
+                                        android:textSize="13sp"
+                                        android:gravity="end|center"
+                                        android:singleLine="true" />
                                 </LinearLayout>
 
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginStart="8dp"
+                                    android:background="@drawable/background_tick" />
+
+                                <!-- Position -->
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                    android:orientation="horizontal"
+                                    android:paddingHorizontal="8dp">
 
-                                    <com.google.android.material.card.MaterialCardView
-                                        android:layout_width="match_parent"
+                                    <TextView
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginBottom="14dp"
-                                        app:cardBackgroundColor="@color/neutral_200"
-                                        app:cardCornerRadius="12dp"
-                                        app:strokeColor="@color/transparent"
-                                        app:strokeWidth="0dp">
+                                        android:layout_gravity="center"
+                                        android:layout_marginEnd="10dp"
+                                        android:fontFamily="@font/work_sans_regular"
+                                        android:paddingVertical="15dp"
+                                        android:text="Position"
+                                        android:textColor="@color/black_pearl"
+                                        android:textSize="15sp" />
 
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:orientation="horizontal"
-                                            android:paddingHorizontal="8dp">
-
-                                            <TextView
-                                                android:id="@+id/click_button"
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_gravity="center"
-                                                android:layout_marginEnd="10dp"
-                                                android:fontFamily="@font/work_sans_regular"
-                                                android:paddingVertical="15dp"
-                                                android:text="How much?"
-                                                android:textColor="@color/neutral_500"
-                                                android:textSize="13sp" />
-
-                                            <EditText
-                                                android:id="@+id/number_edit_text"
-                                                android:layout_width="0dp"
-                                                android:layout_height="match_parent"
-                                                android:layout_gravity="center"
-                                                android:layout_weight="1"
-                                                android:background="@color/transparent"
-                                                android:ellipsize="end"
-                                                android:fontFamily="@font/work_sans_regular"
-                                                android:gravity="end|center"
-                                                android:hint="TMT"
-                                                android:importantForAutofill="no"
-                                                android:inputType="textPersonName"
-                                                android:maxLines="1"
-                                                android:singleLine="true"
-                                                android:textColor="@color/black_pearl"
-                                                android:textColorHint="@color/neutral_700"
-                                                android:textSize="13sp" />
-
-                                        </LinearLayout>
-
-                                    </com.google.android.material.card.MaterialCardView>
-
-                                    <com.google.android.material.card.MaterialCardView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="24dp"
-                                        app:cardBackgroundColor="@color/neutral_200"
-                                        app:cardCornerRadius="12dp"
-                                        app:strokeColor="@color/transparent"
-                                        app:strokeWidth="0dp">
-
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:orientation="horizontal">
-
-                                            <EditText
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:layout_gravity="center"
-                                                android:layout_marginHorizontal="8dp"
-                                                android:layout_marginVertical="12dp"
-                                                android:background="@color/transparent"
-                                                android:fontFamily="@font/work_sans_regular"
-                                                android:hint="Enter cost title"
-                                                android:importantForAutofill="no"
-                                                android:inputType="textMultiLine"
-                                                android:maxLines="5"
-                                                android:textColor="@color/black_pearl"
-                                                android:textColorHint="@color/neutral_500"
-                                                android:textSize="13sp" />
-
-                                        </LinearLayout>
-
-                                    </com.google.android.material.card.MaterialCardView>
-
-                                    <com.google.android.material.card.MaterialCardView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        app:cardBackgroundColor="@color/neutral_200"
-                                        app:cardCornerRadius="12dp"
-                                        app:strokeWidth="0dp">
-
-                                        <EditText
-                                            android:id="@+id/editText"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:background="@android:color/transparent"
-                                            android:fontFamily="@font/work_sans_regular"
-                                            android:gravity="start"
-                                            android:hint="Add cost description"
-                                            android:importantForAutofill="no"
-                                            android:inputType="textMultiLine"
-                                            android:maxLines="5"
-                                            android:minLines="3"
-                                            android:paddingHorizontal="8dp"
-                                            android:paddingVertical="12dp"
-                                            android:textColor="@color/black_pearl"
-                                            android:textColorHint="@color/neutral_500"
-                                            android:textSize="13sp" />
-
-                                    </com.google.android.material.card.MaterialCardView>
-
+                                    <EditText
+                                        android:id="@+id/position"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@android:color/transparent"
+                                        android:hint="Manager"
+                                        android:inputType="textPersonName"
+                                        android:textColor="@color/black_pearl"
+                                        android:textColorHint="@color/neutral_600"
+                                        android:textSize="13sp"
+                                        android:gravity="end|center"
+                                        android:singleLine="true" />
                                 </LinearLayout>
-
                             </LinearLayout>
-
-                        </LinearLayout>
-
-                    </com.google.android.material.card.MaterialCardView>
-
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
                 </LinearLayout>
-
-
             </LinearLayout>
         </ScrollView>
-
-        <!-- Save Button - Fixed at bottom -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingHorizontal="24dp"
-            android:paddingTop="18dp"
-            android:paddingBottom="32dp"
-            android:background="@color/neutral_100">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/save_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/black_pearl"
-                app:cardCornerRadius="12dp"
-                app:strokeColor="@color/transparent"
-                app:strokeWidth="0dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="114dp"
-                    android:paddingVertical="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/work_sans_semi_bold"
-                        android:gravity="center"
-                        android:text="Cash out"
-                        android:textColor="@color/neutral_300"
-                        android:textSize="17sp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
-
-    </LinearLayout>
-    <!-- Your original layout  ends here -->
-
-</com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

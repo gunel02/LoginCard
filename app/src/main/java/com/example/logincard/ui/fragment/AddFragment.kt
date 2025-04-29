@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.logincard.databinding.FragmentAddBinding
 import com.example.logincard.ui.adapter.AdapterNamesOfAddAssigns
+import com.example.logincard.ui.bottom_sheet.AddNewAssignBottomSheet
+import com.example.logincard.ui.bottom_sheet.UserDetailBottomSheet
 import com.example.logincard.ui.utlis.navigation.MainNavigationUtil
 
 
@@ -31,7 +33,8 @@ class AddFragment : Fragment() {
 
     private fun initListener(){
         binding?.addAssignButton?.setOnClickListener {
-            MainNavigationUtil.navigateToAddNewAssignFragment(requireContext())
+            val bottomSheet = AddNewAssignBottomSheet()
+            bottomSheet.show(requireActivity().supportFragmentManager, "bottomSheet")
         }
     }
 
